@@ -25,7 +25,7 @@ function getPlayerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`.
-    return move || getInput();
+    return playerMove || getInput();
 
 }
 
@@ -33,7 +33,7 @@ function getComputerMove(move) {
     // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    return move || randomPlay();
+    return computerMove || randomPlay();
 }
 
 function getWinner(playerMove,computerMove) {
@@ -78,7 +78,24 @@ function playToFive() {
     var playerWins = 0;
     var computerWins = 0;
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
-    /* YOUR CODE HERE */
+console.log("Let's play Rock, Paper, Scissors");
+    var playerWins = 0;
+    var computerWins = 0;
+    if (playerWins == 5 || computerWins == 5) {
+        return winner + 'wins the game';
+    } else if (playerWins < 5 && winner == 'player') {
+        console.log('Player chose' + playerMove + 'while Computer chose' + computerMove);
+        console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
+        return playerWins += 1;
+    } else if (computerWins < 5 && winner == 'computer') {
+        console.log('Player chose' + playerMove + 'while Computer chose' + computerMove);
+        console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
+        return computerWins += 1;
+    } else (playerWins < 5 && computerWins < 5 && winner == 'tie') {
+        console.log('Tie! Player chose' + playerMove + 'while Computer chose' + computerMove);
+        console.log('The score is currently ' + playerWins + ' to ' + computerWins + '\n');
+        return null;
+    }
     return [playerWins, computerWins];
 }
 
